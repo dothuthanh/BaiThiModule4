@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<head th:replace="/layout :: head"></head>-->
+<body>
+<h3>View City</h3>
+<p>
+    <td>
+    <a th:href="@{/}">
+        <input type="submit" value=" Xem danh sach thanh pho">
+    </a>
+</td>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+    <p>
+        <label>Name City:</label>
+        <label th:text="${city.getNameCity()}"></label>
+    </p>
+    <p>
+        <label>Nation</label>
+        <label th:text="${city.nation.name}"></label>
+    </p>
+    <p>
+        <label>Acreage:</label>
+        <label th:text="${city.getAcreage()}"></label>
+    </p>
+    <p>
+        <label>Population:</label>
+        <label th:text="${city.getPopulation()}"></label>
+    </p>
+    <p>
+        <label>GDP:</label>
+        <label th:text="${city.getGdp()}"></label>
+    </p>
+    <p>
+        <label>Description:</label>
+        <label th:text="${city.getDescription()}"></label>
+    </p>
+<td><a th:href="@{/edit-city/__${city.id}__ }"><input type="submit" value="Sua thong tin"></a></td>
+<td><a th:href="@{/delete-city/__${city.id}__ }"><input type="submit" value="Xoa thong tin"></a></td>
+</body>
+</html>
